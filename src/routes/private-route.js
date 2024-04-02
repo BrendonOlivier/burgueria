@@ -2,20 +2,20 @@
 // o usuário tem que estar logado para ter acesso ao restante da aplicação
 
 import React from 'react'
-import { Route, redirect } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-function PrivateRoute ({ element, ...rest }) {
-  const user = localStorage.getItem('devburguer:userData')
-
-  if (!user) { // Se o user não existir ele será redirecionado para a tela de login ( usando o Redirect )
-    return redirect('/login')
+function PrivateRoute ({ component, ...rest }) {
+  const user = localStorage.getItem('devburger:userData')
+  // Se o user não existir ele será redirecionado para a tela de login ( usando o Redirect )
+  if (!user) {
+    return <Redirect to='/login' />
   }
-  return <Route {...rest} element={element} />
+  return <Route {...rest} component={component} />
 }
 
 export default PrivateRoute
 
 PrivateRoute.propTypes = {
-  element: PropTypes.oneOfType([PropTypes.func, PropTypes.element])
+  component: PropTypes.oneOfType([PropTypes.func, PropTypes.element])
 }

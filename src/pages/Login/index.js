@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 import { toast } from 'react-toastify'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 import api from '../../services/api'
 import LoginImg from '../../assets/ImageLogin.svg'
@@ -14,6 +14,7 @@ import Button from '../../components/Button'
 import { useUser } from '../../hooks/UserContext'
 
 function Login () {
+  const history = useHistory()
   const { putUserData } = useUser()
 
   // Validar email e senha com o yupResolver
@@ -45,6 +46,10 @@ function Login () {
     )
 
     putUserData(data)
+
+    setTimeout(() => {
+      history.push('/')
+    }, 1000)
   }
   return (
     <Container>

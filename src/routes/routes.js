@@ -1,22 +1,22 @@
 // Criar nossas rotas de navegação com react-router-dom (v6)
 import React from 'react'
-import { Routes, Route, BrowserRouter as Router } from 'react-router-dom'
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 
 import Login from '../pages/Login'
 import Register from '../pages/Register'
 import Home from '../pages/Home'
 import PrivateRoute from './private-route'
 
-function MyRoutes () {
+function Routes () {
   return (
         <Router>
-            <Routes>
-                <Route element={<Login />} path='/login' />
-                <Route element={<Register />} path='/cadastro' />
-                <PrivateRoute element={<Home />} path='/' />
-            </Routes>
+            <Switch>
+                <Route component={Login} path='/login' />
+                <Route component={Register} path='/cadastro' />
+                <PrivateRoute exact component={Home} path="/" />
+            </Switch>
         </Router>
   )
 }
 
-export default MyRoutes
+export default Routes
