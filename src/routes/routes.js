@@ -5,7 +5,7 @@ import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
 import Home from '../pages/Home'
-import PrivateRoute from './private-route'
+import Products from '../pages/Products'
 
 function Routes () {
   return (
@@ -14,6 +14,7 @@ function Routes () {
         <Route exact component={Home} path="/" />
         <Route component={Login} path='/login' />
         <Route component={Register} path='/cadastro' />
+        <Route component={Products} path="/produtos" />
 
       </Switch>
     </Router>
