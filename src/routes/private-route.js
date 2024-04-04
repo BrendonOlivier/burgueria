@@ -8,6 +8,7 @@ import PropTypes from 'prop-types'
 function PrivateRoute ({ component, ...rest }) {
   const user = localStorage.getItem('devburger:userData')
   // Se o user não existir ele será redirecionado para a tela de login ( usando o Redirect )
+
   if (!user) {
     return <Redirect to='/login' />
   }

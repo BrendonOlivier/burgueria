@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    background-color: #efefef;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,12 +35,21 @@ export const CategoryImg = styled.img`
 export const ContainerItens = styled.div`
     display: flex;
     flex-direction: column;
+
+    p{
+        font-family: normal;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 128%;
+        color: #424242;
+    }
 `
 
 export const Image = styled.img`
     width: 230px;
     height: 150px;
     border-radius: 10px;
+    margin-bottom: 16px;
 `
 
 export const Button = styled.button`

@@ -9,13 +9,14 @@ import PrivateRoute from './private-route'
 
 function Routes () {
   return (
-        <Router>
-            <Switch>
-                <Route component={Login} path='/login' />
-                <Route component={Register} path='/cadastro' />
-                <PrivateRoute exact component={Home} path="/" />
-            </Switch>
-        </Router>
+    <Router>
+      <Switch>
+        <Route exact component={Home} path="/" />
+        <Route component={Login} path='/login' />
+        <Route component={Register} path='/cadastro' />
+
+      </Switch>
+    </Router>
   )
 }
 
