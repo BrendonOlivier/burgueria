@@ -8,8 +8,8 @@ import { Container, CategoryImg, ContainerItens, Image, Button } from './styles'
 import Carousel from 'react-elastic-carousel'
 import formatCurrency from '../../utils/formatCurrency'
 
-function OffersCarousel () {
-  const [offers, setOffers] = useState()
+export function OffersCarousel () {
+  const [offers, setOffers] = useState([])
 
   useEffect(() => {
     async function loadOffers () {
@@ -54,5 +54,3 @@ function OffersCarousel () {
     </Container>
   )
 }
-
-export default OffersCarousel

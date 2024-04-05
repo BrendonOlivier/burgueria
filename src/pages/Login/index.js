@@ -10,10 +10,10 @@ import LoginImg from '../../assets/ImageLogin.svg'
 import Logo from '../../assets/Logo.svg'
 
 import { Container, LoginImage, ContainerItens, Label, Input, SignLink, ErrorMessage } from './styles'
-import Button from '../../components/Button'
+import { Button } from '../../components'
 import { useUser } from '../../hooks/UserContext'
 
-function Login () {
+export function Login () {
   const history = useHistory()
   const { putUserData } = useUser()
 
@@ -74,5 +74,3 @@ function Login () {
     </Container>
   )
 }
-
-export default Login

@@ -2,10 +2,7 @@
 import React from 'react'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 
-import Login from '../pages/Login'
-import Register from '../pages/Register'
-import Home from '../pages/Home'
-import Products from '../pages/Products'
+import { Home, Login, Products, Register, Cart } from '../pages'
 
 function Routes () {
   return (
@@ -15,7 +12,7 @@ function Routes () {
         <Route component={Login} path='/login' />
         <Route component={Register} path='/cadastro' />
         <Route component={Products} path="/produtos" />
-
+        <Route component={Cart} path="/carrinho" />
       </Switch>
     </Router>
   )

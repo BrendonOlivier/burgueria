@@ -10,9 +10,9 @@ import RegisterImg from '../../assets/ImageRegister.svg'
 import Logo from '../../assets/Logo.svg'
 
 import { Container, RegisterImage, ContainerItens, Label, Input, SignLink, ErrorMessage } from './styles'
-import Button from '../../components/Button'
+import { Button } from '../../components'
 
-function Register () {
+export function Register () {
   // Validar email e senha com o yupResolver
   const schema = Yup.object().shape({
     name: Yup.string().required('O seu nome é obrigatório'),
@@ -80,5 +80,3 @@ function Register () {
     </Container>
   )
 }
-
-export default Register
