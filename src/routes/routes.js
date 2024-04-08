@@ -3,16 +3,17 @@ import React from 'react'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 
 import { Home, Login, Products, Register, Cart } from '../pages'
+import PrivateRoute from './private-route'
 
 function Routes () {
   return (
     <Router>
       <Switch>
-        <Route exact component={Home} path="/" />
+        <PrivateRoute exact component={Home} path="/" />
         <Route component={Login} path='/login' />
         <Route component={Register} path='/cadastro' />
-        <Route component={Products} path="/produtos" />
-        <Route component={Cart} path="/carrinho" />
+        <PrivateRoute component={Products} path="/produtos" />
+        <PrivateRoute component={Cart} path="/carrinho" />
       </Switch>
     </Router>
   )

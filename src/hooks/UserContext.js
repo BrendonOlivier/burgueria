@@ -14,6 +14,11 @@ export const UserProvider = ({ children }) => {
     await localStorage.setItem('devburguer:userData', JSON.stringify(userInfo))
   }
 
+  // Criar uma função para deslogar o usuário
+  const logout = async () => {
+    localStorage.removeItem('devburguer:userData')
+  }
+
   // e com o useEffect, toda vez que recarregar a página, não perderemos os dados
   useEffect(() => {
     const loadUserData = async () => {
@@ -27,7 +32,7 @@ export const UserProvider = ({ children }) => {
   }, [])
 
   return (
-        <UserContext.Provider value={{ putUserData, userData }}>
+        <UserContext.Provider value={{ putUserData, userData, logout }}>
             {children}
         </UserContext.Provider>
   )
